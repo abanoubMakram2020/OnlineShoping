@@ -1,0 +1,3 @@
+2022-03-13 08:35:39.319 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-03-13 08:35:39.337 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
