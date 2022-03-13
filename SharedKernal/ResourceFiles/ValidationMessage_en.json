@@ -1,9 +1,11 @@
 ﻿{
   "Ksu_Validations_Length200": "No more than 200 characters",
-  "CollegeDeanRequired": "CollegeDean is required",
-  "ViceDeanRequired": "ViceDean is required",
-  "DentistryRequired": "Dentistry is required",
-  "MedicalRequired": "Medical is required"
-
+  "UserFullNameValidation": "Full name  length should at least 5 Characters and not more than 50 Characters",
+  "UserUserNameValidation": "User name  length should at least 5 Characters and not more than 50 Characters",
+  "UserPasswordValidation": "Password not valid",
+  "UserNameAlreadyExist": "User name already exists",
+  "UserRoleValidation": "User role required",
+  "CategoryEnglishNameValidation": "Category english name  length should at least 5 Characters and not more than 50 Characters",
+  "CategoryArabicNameValidation": "Category arabic name  length should at least 5 Characters and not more than 50 Characters"
 
 }

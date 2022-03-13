@@ -1,3 +1,27 @@
-2022-03-13 08:35:39.319 +02:00 [INF] Authorization failed. These requirements were not met:
+2022-03-13 20:03:40.164 +02:00 [INF] Authorization failed. These requirements were not met:
 DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
-2022-03-13 08:35:39.337 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-03-13 20:03:40.304 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-03-13 20:15:04.096 +02:00 [INF] User profile is available. Using 'C:\Users\A.Makram\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-13 20:15:04.699 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-13 20:15:04.700 +02:00 [INF] Hosting environment: Development
+2022-03-13 20:15:04.700 +02:00 [INF] Content root path: C:\Users\A.Makram\source\repos\OnlineShoping\OnlineShoping.Presentation.API
+2022-03-13 20:15:04.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-03-13 20:15:05.258 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 488.6203ms
+2022-03-13 20:15:05.331 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - -
+2022-03-13 20:15:05.388 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - - - 200 11964 application/javascript;+charset=utf-8 53.3384ms
+2022-03-13 20:15:05.866 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - -
+2022-03-13 20:15:06.236 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - - - 200 - application/json;charset=utf-8 369.6945ms
+2022-03-13 20:27:29.240 +02:00 [INF] User profile is available. Using 'C:\Users\A.Makram\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-03-13 20:27:29.759 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-03-13 20:27:29.760 +02:00 [INF] Hosting environment: Development
+2022-03-13 20:27:29.760 +02:00 [INF] Content root path: C:\Users\A.Makram\source\repos\OnlineShoping\OnlineShoping.Presentation.API
+2022-03-13 20:27:29.827 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-03-13 20:27:30.237 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - -
+2022-03-13 20:27:30.240 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 416.4175ms
+2022-03-13 20:27:30.283 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - - - 200 11964 application/javascript;+charset=utf-8 43.6506ms
+2022-03-13 20:27:30.611 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - -
+2022-03-13 20:27:30.878 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - - - 200 - application/json;charset=utf-8 267.6374ms
+2022-03-13 20:27:44.802 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/User/Register application/json 121
+2022-03-13 20:27:44.972 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.UserController.Register (OnlineShoping.Presentation.API)'
+2022-03-13 20:27:53.039 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.UserController.Register (OnlineShoping.Presentation.API)'
+2022-03-13 20:27:53.044 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/User/Register application/json 121 - 200 340 application/json 8241.5481ms

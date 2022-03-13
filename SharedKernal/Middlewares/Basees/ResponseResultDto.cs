@@ -18,6 +18,7 @@ namespace SharedKernal.Middlewares.Basees
         public string ReferenceCode { get; set; }
         public ResponseStatusCode StatusCode { get; set; }
         public string StatusName => StatusCode.ToString();
+        public Dictionary<string, List<string>> Errors { get; set; }
 
         /// <summary>
         /// Return Success Code => 1 
@@ -80,6 +81,16 @@ namespace SharedKernal.Middlewares.Basees
                 StatusCode = ResponseStatusCode.MultiError,
                 Message = message,
                 Result = result,
+            };
+        }
+
+        public static ResponseResultDto<TResult> MultiError(Dictionary<string, List<string>> dic, string message)
+        {
+            return new ResponseResultDto<TResult>()
+            {
+                StatusCode = ResponseStatusCode.MultiError,
+                Message = message,
+                Errors = dic,
             };
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShoping.Application.Validations
 {
-    internal class CartInputValidation
+    public class CartInputValidation
     {
     }
 }

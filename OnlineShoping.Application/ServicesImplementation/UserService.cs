@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using OnlineShoping.Application.DTOs.InputDTO;
@@ -10,6 +11,8 @@ using OnlineShoping.Domain.RepositoryInterfaces;
 using SharedKernal.Common.Enum;
 using SharedKernal.Middlewares.Basees;
 using SharedKernal.Middlewares.JWTSettings;
+using SharedKernal.Middlewares.ResourcesReader;
+using SharedKernal.Middlewares.ResourcesReader.Message;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,29 +27,33 @@ namespace OnlineShoping.Application.ServicesImplementation
         private readonly IMapper _autoMapper;
         private readonly ITokenHandler _tokenHandler;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IValidator<RegistrationDTO> _validator;
+        private readonly IMessageResourceReader _messageResourceReader;
         #endregion
 
 
 
         #region CTOR
         public UserService(IMapper autoMapper, ITokenHandler tokenHandler, IHttpContextAccessor httpContextAccessor,
-            IUserRepository userRepository,IUnitOfWork unitOfWork
-)
+            IUserRepository userRepository, IUnitOfWork unitOfWork, IValidator<RegistrationDTO> validator,
+            IMessageResourceReader messageResourceReader)
         {
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
             _autoMapper = autoMapper;
             _tokenHandler = tokenHandler;
             _httpContextAccessor = httpContextAccessor;
+            _validator = validator;
+            _messageResourceReader = messageResourceReader;
         }
         #endregion
-        public async Task<ResponseResultDto<TokenDTO>> Login(BaseRequestDto<UserInputDTO> userDTO)
+        public async Task<ResponseResultDto<TokenDTO>> Login(BaseRequestDto<LoginDTO> userDTO)
         {
 
             var claims = _tokenHandler.GetTokenData(_httpContextAccessor.HttpContext.Request);
             if (claims != null && claims.Any())
             {
-                return ResponseResultDto<TokenDTO>.MultiError(null, "you already authrized");
+                return ResponseResultDto<TokenDTO>.MultiError(result: null, "you already authrized");
             }
             else
             {
@@ -65,17 +72,24 @@ namespace OnlineShoping.Application.ServicesImplementation
 
                 }
                 if (!string.IsNullOrEmpty(tokenDTO.Token))
-                    return ResponseResultDto<TokenDTO>.Success(tokenDTO, "Success");
-                return ResponseResultDto<TokenDTO>.NotFound(null, "Failed");
+                    return ResponseResultDto<TokenDTO>.Success(result: tokenDTO, message: _messageResourceReader.GetMessage(ResourcesMessageKey.Successfully));
+                return ResponseResultDto<TokenDTO>.NotFound(result: null, message: _messageResourceReader.GetMessage(ResourcesMessageKey.NotDataFound));
             }
         }
 
-        public async Task<ResponseResultDto<bool>> Register(BaseRequestDto<UserInputDTO> userRegistrationDTO)
+        public async Task<ResponseResultDto<bool>> Register(BaseRequestDto<RegistrationDTO> userRegistrationDTO)
         {
+            var result = _validator.Validate(userRegistrationDTO.Data);
+            if (!result.IsValid)
+            {
+                Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+                result.Errors.GroupBy(p => p.PropertyName).ToList().ForEach(item => dict.Add(item.Key, item.Distinct().Select(e => e.ErrorMessage).ToList()));
+                return ResponseResultDto<bool>.MultiError(dic: dict, message: "error");
+            }
             var claims = _tokenHandler.GetTokenData(_httpContextAccessor.HttpContext.Request);
             if (claims != null && claims.Any())
             {
-                return ResponseResultDto<bool>.InvalidData(false, "you already authrized");
+                return ResponseResultDto<bool>.InvalidData(result: false, message: _messageResourceReader.GetMessage(ResourcesMessageKey.AlreadAuthorized));
             }
             else
             {
@@ -83,7 +97,7 @@ namespace OnlineShoping.Application.ServicesImplementation
                 await _userRepository.Add(userObj);
                 await _unitOfWork.Complete();
 
-                return ResponseResultDto<bool>.Success(true, "Done");
+                return ResponseResultDto<bool>.Success(result: true, message: _messageResourceReader.GetMessage(ResourcesMessageKey.Successfully));
             }
         }
 

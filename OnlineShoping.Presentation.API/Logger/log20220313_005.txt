@@ -1,0 +1,153 @@
+2022-03-13 21:06:47.971 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-03-13 21:06:48.023 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-03-13 21:07:10.854 +02:00 [INF] Route matched with {action = "Login", controller = "User", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(SharedKernal.Middlewares.Basees.BaseRequestDto`1[OnlineShoping.Application.DTOs.InputDTO.LoginDTO]) on controller OnlineShoping.Presentation.API.Controllers.UserController (OnlineShoping.Presentation.API).
+2022-03-13 21:07:12.003 +02:00 [WRN] No type was specified for the decimal property 'Total' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-03-13 21:07:12.003 +02:00 [WRN] No type was specified for the decimal property 'UnitPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-03-13 21:07:12.162 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:07:12.549 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.UserController.Login (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:07:13.465 +02:00 [INF] Executed DbCommand (61ms) [Parameters=[@__userDTO_Data_UserName_0='?' (Size = 50), @__userDTO_Data_Password_1='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FullName], [u].[Password], [u].[RoleId], [u].[UserName]
+FROM [User] AS [u]
+WHERE ([u].[UserName] = @__userDTO_Data_UserName_0) AND ([u].[Password] = @__userDTO_Data_Password_1)
+2022-03-13 21:07:13.821 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.UserController.Login (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1263.1126ms.
+2022-03-13 21:07:13.828 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:07:13.838 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.UserController.Login (OnlineShoping.Presentation.API) in 2977.2163ms
+2022-03-13 21:07:41.745 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:07:41.757 +02:00 [INF] Authorization was successful.
+2022-03-13 21:07:41.764 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrUpdate(SharedKernal.Middlewares.Basees.BaseRequestDto`1[OnlineShoping.Application.DTOs.InputDTO.CategoryInputDTO]) on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:07:41.815 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:07:41.884 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:07:41.989 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32), @__ToLower_1='?' (Size = 50), @__ToLower_2='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+WHERE (([c].[Id] <> @__id_0) AND (LOWER(LTRIM(RTRIM([c].[NameEn]))) = @__ToLower_1)) AND (LOWER(LTRIM(RTRIM([c].[NameEn]))) = @__ToLower_2)
+2022-03-13 21:07:42.232 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 50), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Category] ([CreationDate], [ModificationDate], [NameAr], [NameEn])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Category]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-03-13 21:07:42.298 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 413.5576ms.
+2022-03-13 21:07:42.298 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:07:42.299 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API) in 534.7738ms
+2022-03-13 21:07:49.559 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:07:49.560 +02:00 [INF] Authorization was successful.
+2022-03-13 21:07:49.564 +02:00 [INF] Route matched with {action = "GetAll", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:07:49.602 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:07:49.666 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:07:49.686 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+2022-03-13 21:07:49.735 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 68.7464ms.
+2022-03-13 21:07:49.735 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:07:49.735 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API) in 171.7062ms
+2022-03-13 21:08:15.134 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:08:15.134 +02:00 [INF] Authorization was successful.
+2022-03-13 21:08:15.138 +02:00 [INF] Route matched with {area = "AdminPanel", action = "GetStastics", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStastics() on controller OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController (OnlineShoping.Presentation.API).
+2022-03-13 21:08:15.150 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:08:18.924 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:08:18.949 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Category] AS [c]
+2022-03-13 21:08:18.959 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+2022-03-13 21:08:18.962 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+2022-03-13 21:08:18.967 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Cart] AS [c]
+2022-03-13 21:08:18.969 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 37.2337ms.
+2022-03-13 21:08:18.970 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:08:18.970 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API) in 3832.0486ms
+2022-03-13 21:08:44.684 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:08:44.684 +02:00 [INF] Authorization was successful.
+2022-03-13 21:08:44.685 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrUpdate(SharedKernal.Middlewares.Basees.BaseRequestDto`1[OnlineShoping.Application.DTOs.InputDTO.CategoryInputDTO]) on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:08:44.713 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:08:44.763 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:08:44.774 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32), @__ToLower_1='?' (Size = 50), @__ToLower_2='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+WHERE (([c].[Id] <> @__id_0) AND (LOWER(LTRIM(RTRIM([c].[NameEn]))) = @__ToLower_1)) AND (LOWER(LTRIM(RTRIM([c].[NameEn]))) = @__ToLower_2)
+2022-03-13 21:08:44.779 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 50), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Category] ([CreationDate], [ModificationDate], [NameAr], [NameEn])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Category]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-03-13 21:08:44.817 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 54.3928ms.
+2022-03-13 21:08:44.817 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:08:44.818 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API) in 132.8087ms
+2022-03-13 21:08:53.365 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:08:53.367 +02:00 [INF] Authorization was successful.
+2022-03-13 21:08:53.368 +02:00 [INF] Route matched with {action = "GetAll", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:08:53.368 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:08:53.419 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:08:53.421 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+2022-03-13 21:08:53.424 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 4.365ms.
+2022-03-13 21:08:53.424 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:08:53.424 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API) in 56.5745ms
+2022-03-13 21:09:03.629 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:09:03.630 +02:00 [INF] Authorization was successful.
+2022-03-13 21:09:03.635 +02:00 [INF] Route matched with {action = "GetById", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Nullable`1[System.Int32]) on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:09:03.635 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:09:03.690 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:09:03.702 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__Id_Data_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+WHERE [c].[Id] = @__Id_Data_0
+2022-03-13 21:09:03.715 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 24.4359ms.
+2022-03-13 21:09:03.715 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:09:03.716 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API) in 80.6618ms
+2022-03-13 21:09:15.952 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:09:15.952 +02:00 [INF] Authorization was successful.
+2022-03-13 21:09:15.952 +02:00 [INF] Route matched with {action = "CreateOrUpdate", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrUpdate(SharedKernal.Middlewares.Basees.BaseRequestDto`1[OnlineShoping.Application.DTOs.InputDTO.CategoryInputDTO]) on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:09:15.953 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:09:16.022 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:09:16.027 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32), @__ToLower_1='?' (Size = 50), @__ToLower_2='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+WHERE (([c].[Id] <> @__id_0) AND (LOWER(LTRIM(RTRIM([c].[NameEn]))) = @__ToLower_1)) AND (LOWER(LTRIM(RTRIM([c].[NameEn]))) = @__ToLower_2)
+2022-03-13 21:09:16.051 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 50), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Category] SET [CreationDate] = @p0, [ModificationDate] = @p1, [NameAr] = @p2, [NameEn] = @p3
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+2022-03-13 21:09:16.054 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 32.0883ms.
+2022-03-13 21:09:16.054 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:09:16.054 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API) in 102.3206ms
+2022-03-13 21:09:21.996 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:09:21.996 +02:00 [INF] Authorization was successful.
+2022-03-13 21:09:21.997 +02:00 [INF] Route matched with {action = "GetById", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Nullable`1[System.Int32]) on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:09:21.997 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:09:22.056 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:09:22.063 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__Id_Data_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+WHERE [c].[Id] = @__Id_Data_0
+2022-03-13 21:09:22.065 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.2116ms.
+2022-03-13 21:09:22.065 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:09:22.066 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API) in 69.0299ms
+2022-03-13 21:09:32.397 +02:00 [INF] Successfully validated the token.
+2022-03-13 21:09:32.397 +02:00 [INF] Authorization was successful.
+2022-03-13 21:09:32.403 +02:00 [INF] Route matched with {action = "Delete", controller = "Category", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller OnlineShoping.Presentation.API.Controllers.CategoryController (OnlineShoping.Presentation.API).
+2022-03-13 21:09:32.404 +02:00 [INF] Entity Framework Core 5.0.14 initialized 'OnlineShopingDBContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-03-13 21:09:32.449 +02:00 [INF] Executing action method OnlineShoping.Presentation.API.Controllers.CategoryController.Delete (OnlineShoping.Presentation.API) - Validation state: "Valid"
+2022-03-13 21:09:32.479 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreationDate], [c].[ModificationDate], [c].[NameAr], [c].[NameEn]
+FROM [Category] AS [c]
+WHERE [c].[Id] = @__p_0
+2022-03-13 21:09:32.498 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Category]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-03-13 21:09:32.502 +02:00 [INF] Executed action method OnlineShoping.Presentation.API.Controllers.CategoryController.Delete (OnlineShoping.Presentation.API), returned result Microsoft.AspNetCore.Mvc.ContentResult in 53.0962ms.
+2022-03-13 21:09:32.503 +02:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2022-03-13 21:09:32.503 +02:00 [INF] Executed action OnlineShoping.Presentation.API.Controllers.CategoryController.Delete (OnlineShoping.Presentation.API) in 99.9892ms

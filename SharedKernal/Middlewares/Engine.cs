@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using SharedKernal.Common.Configuration;
+using SharedKernal.Common.Enum;
 using SharedKernal.Middlewares.Exception;
 using SharedKernal.Middlewares.JWTSettings;
 using SharedKernal.Middlewares.Swagger;
@@ -43,14 +44,14 @@ namespace SharedKernal.Middlewares
             #region App localization
             service.Configure<RequestLocalizationOptions>(options =>
             {
-                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(Cultures.arCul.TwoLetterISOLanguageName);
-                options.SupportedCultures = new List<CultureInfo> { Cultures.enCul, Cultures.arCul };
+                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(nameof(LanguageLetter.Ar).ToLower());
+                options.SupportedCultures = new List<CultureInfo> { new CultureInfo(nameof(LanguageLetter.En).ToLower()), new CultureInfo(nameof(LanguageLetter.Ar).ToLower()) };
 
                 options.RequestCultureProviders.Insert(0, new Microsoft.AspNetCore.Localization.CustomRequestCultureProvider(context =>
                 {
                     var userLangs = context.Request.Headers["Accept-Language"].ToString();
                     var firstLang = userLangs.Split(',').FirstOrDefault();
-                    var defaultLang = string.IsNullOrEmpty(firstLang) ? Cultures.arCul.TwoLetterISOLanguageName : firstLang;
+                    var defaultLang = string.IsNullOrEmpty(firstLang) ? nameof(LanguageLetter.Ar).ToLower() : firstLang;
                     return Task.FromResult(new Microsoft.AspNetCore.Localization.ProviderCultureResult(defaultLang, defaultLang));
                 }));
             });

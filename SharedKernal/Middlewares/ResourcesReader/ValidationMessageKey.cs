@@ -8,6 +8,7 @@ namespace SharedKernal.Middlewares.ResourcesReader
 {
     public class ValidationMessageKey
     {
+      
         public static string ApplicantNameValidation = "ApplicantNameValidation";
         public static string ApplicantFamilyNameValidation = "ApplicantFamilyNameValidation";
         public static string ApplicantAddressValidation = "ApplicantAddressValidation";
@@ -21,6 +22,10 @@ namespace SharedKernal.Middlewares.ResourcesReader
         public static string UserUserNameValidation = "UserUserNameValidation";
         public static string UserPasswordValidation = "UserPasswordValidation";
         public static string UserNameAlreadyExist   = "UserNameAlreadyExist";
+        public static string UserRoleValidation = "UserRoleValidation";
+
+        public static  string CategoryEnglishNameValidation = "CategoryEnglishNameValidation";
+        public static  string CategoryArabicNameValidation = "CategoryArabicNameValidation";
 
     }
 }

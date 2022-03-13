@@ -1,7 +1,12 @@
 ﻿{
   "Ksu_Validations_Length200": "لا يجب ان يزيد عن 200 حرف",
-  "CollegeDeanRequired": "عميد الكلية مطلوب",
-  "ViceDeanRequired": "وكيل الكلية مطلوب",
-  "DentistryRequired": "كلية طب الاسنان مطلوبة",
-  "MedicalRequired": "كلية الطب مطلوبة"
+  "UserFullNameValidation": "الاسم بالكامل يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف",
+  "UserUserNameValidation": "أسم المستخدم يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف",
+  "UserPasswordValidation": "الرقم السري غير قوي",
+  "UserNameAlreadyExist": "أسم المستخدم موجود من قبل",
+  "UserRoleValidation": "وظيفة المستخدم مطلوبة",
+
+  "CategoryEnglishNameValidation": "أسم الصنف  بالانجليزي يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف",
+  "CategoryArabicNameValidation": "أسم الصنف بالعربي يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف"
+
 }

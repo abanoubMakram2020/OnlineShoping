@@ -7,7 +7,7 @@ namespace OnlineShoping.Application.ServicesInterfaces
 {
     public interface IUserService
     {
-        Task<ResponseResultDto<bool>> Register(BaseRequestDto<UserInputDTO> user);
-        Task<ResponseResultDto<TokenDTO>> Login(BaseRequestDto<UserInputDTO> user);
+        Task<ResponseResultDto<bool>> Register(BaseRequestDto<RegistrationDTO> user);
+        Task<ResponseResultDto<TokenDTO>> Login(BaseRequestDto<LoginDTO> user);
     }
 }

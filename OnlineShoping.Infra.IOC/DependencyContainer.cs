@@ -47,6 +47,7 @@ namespace OnlineShoping.Infra.IOC
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<ICartItemService, CartItemService>();
+            services.AddScoped<IDashboardService, DashboardService>();
 
 
 

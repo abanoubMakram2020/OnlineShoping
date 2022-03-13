@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers
 {
-   [Area("AdminPanel")]
+    [Area("AdminPanel")]
     public class HomeController : BaseController
     {
         #region Fields
-        private readonly ICategoryService _CategoryService;
+        private readonly IDashboardService _dashboardService;
         #endregion
 
         #region ctor
-        public HomeController(ICategoryService CategoryService, Presenter presenter) : base(presenter)
+        public HomeController(IDashboardService dashboardService, Presenter presenter) : base(presenter)
         {
-            _CategoryService = CategoryService;
+            _dashboardService = dashboardService;
         }
 
         #endregion
@@ -28,13 +28,10 @@ namespace OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers
 
         [HttpGet]
         [MapToApiVersion(APIVersion.Version1)]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseResultDto<List<CategoryOutputDTO>>))]
-        public async Task<IActionResult> GetAll() => await _Presenter.Handle(_CategoryService.GetAll);
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseResultDto<DashboardDTO>))]
+        public async Task<IActionResult> GetStastics() => await _Presenter.Handle(_dashboardService.GetStatistics);
 
 
-        //public IActionResult Dashboard()
-        //{
-        //    return View();
-        //}
+
     }
 }

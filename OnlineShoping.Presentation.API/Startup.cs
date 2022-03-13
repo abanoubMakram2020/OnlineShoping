@@ -1,20 +1,13 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 using OnlineShoping.Application.Validations;
 using OnlineShoping.Infra.IOC;
 using SharedKernal.Middlewares;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OnlineShoping.Presentation.API
 {
@@ -30,7 +23,7 @@ namespace OnlineShoping.Presentation.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ProductInputValidation>(lifetime: ServiceLifetime.Scoped))
+                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UserRegistrationValidation>(lifetime: ServiceLifetime.Scoped))
                  .AddControllersAsServices();
             services.Initialize();
             RegisterServices(services, _configuration);
@@ -58,7 +51,7 @@ namespace OnlineShoping.Presentation.API
                 endpoints.MapAreaControllerRoute(
                    name: "AdminPanelArea",
                    areaName: "AdminPanel",
-                   pattern: "AdminPanel/{controller=Home}/{action=GetAll}/{id?}");
+                   pattern: "AdminPanel/{controller=Home}/{action=GetStastics}/{id?}");
 
                 endpoints.MapControllers();
             });
