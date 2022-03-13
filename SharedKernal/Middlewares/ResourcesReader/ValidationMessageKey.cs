@@ -24,8 +24,14 @@ namespace SharedKernal.Middlewares.ResourcesReader
         public static string UserNameAlreadyExist   = "UserNameAlreadyExist";
         public static string UserRoleValidation = "UserRoleValidation";
 
-        public static  string CategoryEnglishNameValidation = "CategoryEnglishNameValidation";
-        public static  string CategoryArabicNameValidation = "CategoryArabicNameValidation";
+        public static  string EnglishNameValidation = "EnglishNameValidation";
+        public static  string ArabicNameValidation = "ArabicNameValidation";
+        public static  string ItemAlreadyExist = "ItemAlreadyExist";
+
+        public static  string ProductImageValidation = "ProductImageValidation";
+        public static  string ProductCategoryValidation = "ProductCategoryValidation";
+        public static  string ProductAvalaibleQuentityValidation = "ProductAvalaibleQuentityValidation";
+        public static  string UploadProductImageFailed = "UploadProductImageFailed";
 
     }
 }

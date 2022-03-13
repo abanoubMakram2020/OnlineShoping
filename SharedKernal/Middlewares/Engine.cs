@@ -33,6 +33,9 @@ namespace SharedKernal.Middlewares
 
             var _jwtSettings = new JwtSettings();
             configuration.Bind(nameof(JwtSettings), _jwtSettings);
+            
+            var _uploadFilesConfigurations = new UploadFilesConfigurations();
+            configuration.Bind(nameof(UploadFilesConfigurations), _uploadFilesConfigurations);
 
 
             IConfigurationSection originsSection = configuration.GetSection("AllowedOrigins");

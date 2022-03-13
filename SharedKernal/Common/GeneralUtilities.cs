@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -145,6 +148,44 @@ namespace SharedKernal.Common
                 ex = ex.InnerException;
             }
             return ex.Message;
+        }
+
+        public static async Task<bool> Upload(IList<IFormFile> files, string folderPath, string perfix)
+        {
+            bool result = false;
+            try
+            {
+                string uploads = folderPath.Replace("/", "\\");
+                if (!Directory.Exists(uploads))
+                {
+                    Directory.CreateDirectory(uploads);
+                }
+                if (files != null)
+                {
+                    foreach (IFormFile file in files)
+                    {
+                        if (file != null && file.Length > 0)
+                        {
+                            string filePath = Path.Combine(uploads, perfix + file.FileName);
+                            using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+                            {
+                                await file.CopyToAsync(fileStream);
+                            }
+                            result = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+            return result;
+        }
+
+        public static async Task<bool> Upload(IFormFile file, string folderPath, string perfix)
+        {
+            return await Upload(new List<IFormFile>() { file }, folderPath, perfix);
         }
     }
 }

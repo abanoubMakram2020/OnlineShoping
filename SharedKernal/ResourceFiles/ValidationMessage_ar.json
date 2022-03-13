@@ -6,7 +6,11 @@
   "UserNameAlreadyExist": "أسم المستخدم موجود من قبل",
   "UserRoleValidation": "وظيفة المستخدم مطلوبة",
 
-  "CategoryEnglishNameValidation": "أسم الصنف  بالانجليزي يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف",
-  "CategoryArabicNameValidation": "أسم الصنف بالعربي يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف"
-
+  "EnglishNameValidation": "أسم الصنف  بالانجليزي يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف",
+  "ArabicNameValidation": "أسم الصنف بالعربي يجب أن لا يقل عن 5 أحرف وأن لايزيد عن 50 حرف",
+  "ItemAlreadyExist": "العنصر موجود بالفعل",
+  "ProductImageValidation": "صورة المنتج مطلوبة",
+  "ProductCategoryValidation": "الصنف التابع له المنتج مطلوب",
+  "ProductAvalaibleQuentityValidation": "الكمية المتاحة لا تقل عن 0",
+  "UploadProductImageFailed": "فشل تحميل صورة المنتج, حاول مرة أخري"
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using OnlineShoping.Application.DTOs.InputDTO;
 using OnlineShoping.Application.DTOs.OutputDTO;
@@ -6,8 +7,14 @@ using OnlineShoping.Application.ServicesInterfaces;
 using OnlineShoping.Application.UnitOfWork;
 using OnlineShoping.Domain.Entities;
 using OnlineShoping.Domain.RepositoryInterfaces;
+using SharedKernal.Common;
+using SharedKernal.Common.Configuration;
 using SharedKernal.Middlewares.Basees;
+using SharedKernal.Middlewares.ResourcesReader;
+using SharedKernal.Middlewares.ResourcesReader.Message;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OnlineShoping.Application.ServicesImplementation
@@ -17,12 +24,17 @@ namespace OnlineShoping.Application.ServicesImplementation
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _autoMapper;
+        private readonly IValidator<ProductInputDTO> _validator;
+        private readonly IMessageResourceReader _messageResourceReader;
 
-        public ProductService(IUnitOfWork unitOfWork, IProductRepository productRepository, IMapper autoMapper)
+        public ProductService(IUnitOfWork unitOfWork, IProductRepository productRepository, IValidator<ProductInputDTO> validator,
+                              IMapper autoMapper, IMessageResourceReader messageResourceReader)
         {
             _productRepository = productRepository;
             _autoMapper = autoMapper;
             _unitOfWork = unitOfWork;
+            _validator = validator;
+            _messageResourceReader = messageResourceReader;
         }
         public async Task<ResponseResultDto<bool>> DeleteById(BaseRequestDto<int> Id)
         {
@@ -68,9 +80,31 @@ namespace OnlineShoping.Application.ServicesImplementation
 
         public async Task<ResponseResultDto<bool>> SaveProduct(BaseRequestDto<ProductInputDTO> productInputDTO)
         {
+
+            if (productInputDTO.Data.ProductImage is null && productInputDTO.Data.Id == default(int))
+                return ResponseResultDto<bool>.InvalidData(result: false, message: _messageResourceReader.GetValidationMessage(ValidationMessageKey.ProductImageValidation));
+
+            if (productInputDTO.Data.ProductImage is not null)
+            {
+                string perfix = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "-";
+                bool uploadResult = await GeneralUtilities.Upload(productInputDTO.Data.ProductImage, UploadFilesConfigurations.ImageFolderUrl, perfix);
+                if (uploadResult)
+                    productInputDTO.Data.ImageURL = perfix + productInputDTO.Data.ProductImage.FileName;
+                else
+                    return ResponseResultDto<bool>.InvalidData(result: false, message: _messageResourceReader.GetValidationMessage(ValidationMessageKey.UploadProductImageFailed));
+            }
+
+            var result = _validator.Validate(productInputDTO.Data);
+            if (!result.IsValid)
+            {
+                Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+                result.Errors.GroupBy(p => p.PropertyName).ToList().ForEach(item => dict.Add(item.Key, item.Distinct().Select(e => e.ErrorMessage).ToList()));
+                return ResponseResultDto<bool>.MultiError(dic: dict, message: "error");
+            }
+
             Product productObj = _autoMapper.Map<Product>(productInputDTO.Data);
 
-            if (productInputDTO.Data.Id > 0)
+            if (productInputDTO.Data.Id > default(int))
                 _productRepository.Update(productObj);
             else
                 await _productRepository.Add(productObj);

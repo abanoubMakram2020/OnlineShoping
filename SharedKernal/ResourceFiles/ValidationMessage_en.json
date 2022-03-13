@@ -5,7 +5,11 @@
   "UserPasswordValidation": "Password not valid",
   "UserNameAlreadyExist": "User name already exists",
   "UserRoleValidation": "User role required",
-  "CategoryEnglishNameValidation": "Category english name  length should at least 5 Characters and not more than 50 Characters",
-  "CategoryArabicNameValidation": "Category arabic name  length should at least 5 Characters and not more than 50 Characters"
-
+  "EnglishNameValidation": "Category english name  length should at least 5 Characters and not more than 50 Characters",
+  "ArabicNameValidation": "Category arabic name  length should at least 5 Characters and not more than 50 Characters",
+  "ItemAlreadyExist": "Item already exist",
+  "ProductImageValidation": "Product image required",
+  "ProductCategoryValidation": "Product category required",
+  "ProductAvalaibleQuentityValidation": "Avalaible quentity should not less than 0",
+  "UploadProductImageFailed": "Upload product image failed,try again"
 }

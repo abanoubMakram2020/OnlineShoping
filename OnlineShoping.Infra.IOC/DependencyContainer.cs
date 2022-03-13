@@ -23,7 +23,7 @@ namespace OnlineShoping.Infra.IOC
         {
             #region DB Contexts
             services.AddDbContext<OnlineShopingDBContext>(options =>
-            options.UseSqlServer(DatabaseConfiguration.ConnectionString));
+            options.UseSqlServer(DatabaseConfiguration.OnlineShopDBConnection));
 
 
             #endregion
