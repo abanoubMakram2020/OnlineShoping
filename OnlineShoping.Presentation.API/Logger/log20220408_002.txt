@@ -1,0 +1,27 @@
+2022-04-08 19:11:01.863 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-04-08 19:11:01.913 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-04-08 19:13:07.233 +02:00 [INF] User profile is available. Using 'C:\Users\A.Makram\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-04-08 19:13:07.757 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-08 19:13:07.758 +02:00 [INF] Hosting environment: Development
+2022-04-08 19:13:07.766 +02:00 [INF] Content root path: C:\Users\A.Makram\source\repos\OnlineShoping\OnlineShoping.Presentation.API
+2022-04-08 19:13:07.814 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-04-08 19:13:08.280 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - -
+2022-04-08 19:13:08.284 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 473.5539ms
+2022-04-08 19:13:08.362 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - - - 200 11963 application/javascript;+charset=utf-8 78.3118ms
+2022-04-08 19:13:08.651 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - -
+2022-04-08 19:13:09.000 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - - - 200 - application/json;charset=utf-8 350.0866ms
+2022-04-08 19:28:16.905 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetById?CategoryId=5 - -
+2022-04-08 19:28:17.224 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetById?CategoryId=5 - - - 401 - - 319.8041ms
+2022-04-08 19:28:36.232 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetById?CategoryId=5 - -
+2022-04-08 19:28:36.509 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 19:28:38.948 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 19:28:38.955 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetById?CategoryId=5 - - - 200 79 application/json 2722.5202ms
+2022-04-08 19:28:48.757 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetById?ProductId=5 - -
+2022-04-08 19:28:48.760 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 19:28:55.289 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 19:28:55.290 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetById?ProductId=5 - - - 200 79 application/json 6533.5786ms
+2022-04-08 19:29:20.895 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetById?ProductId=1 - -
+2022-04-08 19:29:20.899 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 19:29:25.436 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 19:29:25.436 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetById?ProductId=1 - - - 200 392 application/json 4540.8420ms

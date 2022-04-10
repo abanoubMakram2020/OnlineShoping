@@ -1,0 +1,112 @@
+2022-04-08 18:37:45.076 +02:00 [INF] User profile is available. Using 'C:\Users\A.Makram\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-04-08 18:37:46.137 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-04-08 18:37:46.137 +02:00 [INF] Hosting environment: Development
+2022-04-08 18:37:46.137 +02:00 [INF] Content root path: C:\Users\A.Makram\source\repos\OnlineShoping\OnlineShoping.Presentation.API
+2022-04-08 18:37:46.235 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger - -
+2022-04-08 18:37:46.458 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-04-08 18:37:46.475 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger - - - 301 - - 243.4669ms
+2022-04-08 18:37:46.954 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 496.0364ms
+2022-04-08 18:37:47.018 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/swagger-ui.css - -
+2022-04-08 18:37:47.028 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/swagger-ui-bundle.js - -
+2022-04-08 18:37:47.145 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/swagger-ui-standalone-preset.js - -
+2022-04-08 18:37:47.174 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/swagger-ui.css - - - 200 143632 text/css 155.6123ms
+2022-04-08 18:37:47.203 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 57.0252ms
+2022-04-08 18:37:47.213 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 185.5878ms
+2022-04-08 18:37:47.237 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - -
+2022-04-08 18:37:47.246 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - - - 200 11963 application/javascript;+charset=utf-8 4.9720ms
+2022-04-08 18:37:54.614 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - -
+2022-04-08 18:37:54.939 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - - - 200 - application/json;charset=utf-8 324.8297ms
+2022-04-08 18:37:54.970 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/favicon-32x32.png - -
+2022-04-08 18:37:54.971 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/favicon-32x32.png - - - 200 628 image/png 1.5096ms
+2022-04-08 18:39:52.828 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Home/GetStastics - -
+2022-04-08 18:39:53.646 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Home/GetStastics - - - 401 - - 818.3226ms
+2022-04-08 18:41:19.249 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/User/Login application/json 74
+2022-04-08 18:41:19.299 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.UserController.Login (OnlineShoping.Presentation.API)'
+2022-04-08 18:41:24.795 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.UserController.Login (OnlineShoping.Presentation.API)'
+2022-04-08 18:41:24.805 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/User/Login application/json 74 - 200 474 application/json 5555.3043ms
+2022-04-08 18:41:51.946 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Home/GetStastics - -
+2022-04-08 18:41:52.094 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API)'
+2022-04-08 18:41:52.313 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API)'
+2022-04-08 18:41:52.318 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Home/GetStastics - - - 200 91 application/json 371.8246ms
+2022-04-08 18:42:09.018 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetAll - -
+2022-04-08 18:42:09.023 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:42:09.276 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:42:09.277 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetAll - - - 200 316 application/json 259.2735ms
+2022-04-08 18:42:20.877 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetById?CategoryId=1 - -
+2022-04-08 18:42:20.881 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 18:42:20.972 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 18:42:20.973 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetById?CategoryId=1 - - - 200 290 application/json 96.1676ms
+2022-04-08 18:42:47.912 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Category/CreateOrUpdate application/json 178
+2022-04-08 18:42:47.913 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:42:48.200 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:42:48.219 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Category/CreateOrUpdate application/json 178 - 200 366 application/json 306.8349ms
+2022-04-08 18:43:14.044 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Category/CreateOrUpdate application/json 184
+2022-04-08 18:43:14.046 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:43:14.464 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:43:14.466 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Category/CreateOrUpdate application/json 184 - 200 123 application/json 421.6844ms
+2022-04-08 18:43:26.563 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetAll - -
+2022-04-08 18:43:26.565 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:43:26.626 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:43:26.626 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Category/GetAll - - - 200 532 application/json 62.9745ms
+2022-04-08 18:43:43.337 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/v1.0/Category/Delete?CategoryId=3 - -
+2022-04-08 18:43:43.338 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.Delete (OnlineShoping.Presentation.API)'
+2022-04-08 18:43:43.469 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.CategoryController.Delete (OnlineShoping.Presentation.API)'
+2022-04-08 18:43:43.470 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/v1.0/Category/Delete?CategoryId=3 - - - 200 113 application/json 133.0944ms
+2022-04-08 18:44:02.065 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Home/GetStastics - -
+2022-04-08 18:44:02.066 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API)'
+2022-04-08 18:44:02.155 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Areas.AdminPanel.Controllers.HomeController.GetStastics (OnlineShoping.Presentation.API)'
+2022-04-08 18:44:02.156 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Home/GetStastics - - - 200 91 application/json 90.6339ms
+2022-04-08 18:44:43.391 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetAll - -
+2022-04-08 18:44:43.393 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:44:43.649 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:44:43.649 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetAll - - - 200 424 application/json 257.8293ms
+2022-04-08 18:45:09.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetById?ProductId=1 - -
+2022-04-08 18:45:09.943 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 18:45:10.050 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetById (OnlineShoping.Presentation.API)'
+2022-04-08 18:45:10.052 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetById?ProductId=1 - - - 200 392 application/json 126.2962ms
+2022-04-08 18:47:07.779 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarynfgP7jTNN4aFrnXl 1126
+2022-04-08 18:47:07.780 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:47:07.963 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:47:07.964 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarynfgP7jTNN4aFrnXl 1126 - 400 - application/problem+json;+charset=utf-8 185.3782ms
+2022-04-08 18:47:31.083 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundary0TsnLk5mQPF9lBTB 1137
+2022-04-08 18:47:31.124 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:48:07.044 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:48:21.512 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundary0TsnLk5mQPF9lBTB 1137 - 200 115 application/json 50428.6006ms
+2022-04-08 18:49:07.772 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryPlrfhm2xqsbB5BQV 65516
+2022-04-08 18:49:07.815 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:49:47.899 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:49:47.899 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryPlrfhm2xqsbB5BQV 65516 - 200 181 application/json 40129.3108ms
+2022-04-08 18:50:16.830 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarylOYnGMusGoKArmrA 65619
+2022-04-08 18:50:16.832 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:50:30.629 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:50:30.631 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarylOYnGMusGoKArmrA 65619 - 200 98 application/json 13800.9295ms
+2022-04-08 18:50:41.101 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetAll - -
+2022-04-08 18:50:41.102 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:50:41.174 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.GetAll (OnlineShoping.Presentation.API)'
+2022-04-08 18:50:41.177 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/v1.0/Product/GetAll - - - 200 833 application/json 75.5713ms
+2022-04-08 18:51:31.486 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-04-08 18:51:31.586 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 100.6631ms
+2022-04-08 18:51:31.600 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - -
+2022-04-08 18:51:31.605 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js - - - 200 11963 application/javascript;+charset=utf-8 4.5711ms
+2022-04-08 18:51:31.944 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - -
+2022-04-08 18:51:31.985 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1.0/swagger.json - - - 200 - application/json;charset=utf-8 40.7403ms
+2022-04-08 18:51:41.683 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarytMvBdgtDCSSzPzb4 1169
+2022-04-08 18:51:41.685 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarytMvBdgtDCSSzPzb4 1169 - 401 - - 2.7753ms
+2022-04-08 18:52:06.247 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryxDcMuV0B5xBwmRU9 1169
+2022-04-08 18:52:06.251 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryxDcMuV0B5xBwmRU9 1169 - 401 - - 4.1261ms
+2022-04-08 18:52:32.582 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryMk1zAT4PREBDbPtq 1169
+2022-04-08 18:52:32.584 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:52:32.643 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:52:32.644 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryMk1zAT4PREBDbPtq 1169 - 400 - application/problem+json;+charset=utf-8 61.7386ms
+2022-04-08 18:53:14.527 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryd266FgTpwlejBq7P 1181
+2022-04-08 18:53:14.530 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:53:14.548 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:53:14.552 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryd266FgTpwlejBq7P 1181 - 400 - application/problem+json;+charset=utf-8 24.4094ms
+2022-04-08 18:53:22.316 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarygUAvINkpsvzFifVC 1182
+2022-04-08 18:53:22.316 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:53:27.231 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:53:27.231 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundarygUAvINkpsvzFifVC 1182 - 200 115 application/json 4915.5481ms
+2022-04-08 18:53:57.585 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryaTPAg2ZoSL7fklW4 205176
+2022-04-08 18:53:57.586 +02:00 [INF] Executing endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:54:10.880 +02:00 [INF] Executed endpoint 'OnlineShoping.Presentation.API.Controllers.ProductController.CreateOrUpdate (OnlineShoping.Presentation.API)'
+2022-04-08 18:54:11.492 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/v1.0/Product/CreateOrUpdate multipart/form-data;+boundary=----WebKitFormBoundaryaTPAg2ZoSL7fklW4 205176 - 200 - application/json 13907.6021ms

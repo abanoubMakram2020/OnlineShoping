@@ -11,7 +11,7 @@ namespace OnlineShoping.Domain.RepositoryInterfaces
     {
         Task<T> Get(int id);
         IQueryable<T> Get(Expression<Func<T, bool>> expression = null, string includes = "");
-        Task Add(T entity);
+        Task<T> Add(T entity);
         Task Add(List<T> entities);
 
         void Delete(T entity);

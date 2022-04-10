@@ -42,9 +42,15 @@ namespace OnlineShoping.Infra.Data.Repositrories
                 return query.Where(expression);
         }
 
-        public async Task Add(T entity)
+        public async Task<T> Add(T entity)
         {
-            await _dbSet.AddAsync(entity);
+            if (entity == null)
+                throw new ArgumentNullException();
+
+            entity = (await _dbSet.AddAsync(entity)).Entity;
+
+            return entity;
+            //await _dbSet.AddAsync(entity);
         }
 
         public async Task Add(List<T> entities)

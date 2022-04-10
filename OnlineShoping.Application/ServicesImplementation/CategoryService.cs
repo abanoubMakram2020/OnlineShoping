@@ -58,7 +58,7 @@ namespace OnlineShoping.Application.ServicesImplementation
 
         public async Task<ResponseResultDto<CategoryOutputDTO>> GetById(BaseRequestDto<int> Id)
         {
-            var category = await _categoryRepository.Get(expression: r => r.Id == Id.Data).FirstOrDefaultAsync();
+            var category = await _categoryRepository.Get(Id.Data);
             if (category is null)
                 return ResponseResultDto<CategoryOutputDTO>.NotFound(null, "not found");
 

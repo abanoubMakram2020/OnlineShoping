@@ -32,7 +32,7 @@ namespace OnlineShoping.Application.Validations
                               .WithMessage(_messageResourceReader.GetValidationMessage(ValidationMessageKey.ArabicNameValidation));
 
 
-            RuleFor(x => new { x.NameEn, x.NameAr }).Must((model, name) => { return CheckDuplicateCategoyName(model.Id, name.NameAr, name.NameEn); })
+            RuleFor(x => x).Must((model) => { return CheckDuplicateCategoyName(model); })
                 .WithMessage(_messageResourceReader.GetValidationMessage(ValidationMessageKey.ItemAlreadyExist));
 
         }
@@ -42,9 +42,11 @@ namespace OnlineShoping.Application.Validations
         bool CheckCategoryNameEn(string arg) => !(string.IsNullOrWhiteSpace(arg) || arg.Length < 5 || arg.Length > 50);
         bool CheckCategoryNameAr(string arg) => !(string.IsNullOrWhiteSpace(arg) || arg.Length < 5 || arg.Length > 50);
 
-        bool CheckDuplicateCategoyName(int id, string arg1, string arg2)
+        bool CheckDuplicateCategoyName(CategoryInputDTO model)
         {
-            Category categoryObj = _categoryRepository.Get(x => x.Id != id && (x.NameEn.Trim().ToLower() == arg1.Trim().ToLower() || x.NameEn.Trim().ToLower() == arg2.Trim().ToLower())).FirstOrDefault();
+            if (string.IsNullOrWhiteSpace(model.NameAr) || string.IsNullOrWhiteSpace(model.NameEn))
+                return true;
+            Category categoryObj = _categoryRepository.Get(x => x.Id != model.Id && (x.NameEn.Trim().ToLower() == model.NameEn.Trim().ToLower() || x.NameEn.Trim().ToLower() == model.NameAr.Trim().ToLower())).FirstOrDefault();
             return categoryObj is null;
         }
 

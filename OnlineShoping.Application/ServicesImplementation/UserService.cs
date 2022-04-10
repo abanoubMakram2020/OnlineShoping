@@ -29,6 +29,7 @@ namespace OnlineShoping.Application.ServicesImplementation
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IValidator<RegistrationDTO> _validator;
         private readonly IMessageResourceReader _messageResourceReader;
+        private readonly ICartRepository _cartRepository;
         #endregion
 
 
@@ -36,7 +37,7 @@ namespace OnlineShoping.Application.ServicesImplementation
         #region CTOR
         public UserService(IMapper autoMapper, ITokenHandler tokenHandler, IHttpContextAccessor httpContextAccessor,
             IUserRepository userRepository, IUnitOfWork unitOfWork, IValidator<RegistrationDTO> validator,
-            IMessageResourceReader messageResourceReader)
+            IMessageResourceReader messageResourceReader, ICartRepository cartRepository)
         {
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
@@ -45,6 +46,7 @@ namespace OnlineShoping.Application.ServicesImplementation
             _httpContextAccessor = httpContextAccessor;
             _validator = validator;
             _messageResourceReader = messageResourceReader;
+            _cartRepository = cartRepository;
         }
         #endregion
         public async Task<ResponseResultDto<TokenDTO>> Login(BaseRequestDto<LoginDTO> userDTO)
@@ -94,9 +96,17 @@ namespace OnlineShoping.Application.ServicesImplementation
             else
             {
                 User userObj = _autoMapper.Map<User>(userRegistrationDTO.Data);
-                await _userRepository.Add(userObj);
+                await _unitOfWork.StartTransactionScope();
+                var user = await _userRepository.Add(userObj);
                 await _unitOfWork.Complete();
 
+                var cartObj = new Cart()
+                {
+                    Total = 0,
+                    UserId = user.Id
+                };
+                await _cartRepository.Add(cartObj);
+                await _unitOfWork.TransactionScopeComplete();
                 return ResponseResultDto<bool>.Success(result: true, message: _messageResourceReader.GetMessage(ResourcesMessageKey.Successfully));
             }
         }

@@ -9,6 +9,7 @@ using OnlineShoping.Domain.Entities;
 using OnlineShoping.Domain.RepositoryInterfaces;
 using SharedKernal.Common;
 using SharedKernal.Common.Configuration;
+using SharedKernal.Common.Enum;
 using SharedKernal.Middlewares.Basees;
 using SharedKernal.Middlewares.ResourcesReader;
 using SharedKernal.Middlewares.ResourcesReader.Message;
@@ -40,7 +41,7 @@ namespace OnlineShoping.Application.ServicesImplementation
         {
             var productObj = await _productRepository.Get(Id.Data);
             if (productObj == null)
-                return ResponseResultDto<bool>.NotFound(false, "not found");
+                return ResponseResultDto<bool>.NotFound(result: false, message: _messageResourceReader.GetMessage(ResponseStatusCode.NotFound));
 
 
             _productRepository.Delete(productObj);
@@ -62,7 +63,7 @@ namespace OnlineShoping.Application.ServicesImplementation
         {
             var productList = await _productRepository.Get().ToListAsync();
             if (productList is null)
-                return ResponseResultDto<List<ProductOutputDTO>>.NotFound(null, "not found");
+                return ResponseResultDto<List<ProductOutputDTO>>.NotFound(result: null, message: _messageResourceReader.GetMessage(ResponseStatusCode.NotFound));
 
             var result = _autoMapper.Map<List<ProductOutputDTO>>(productList);
             return ResponseResultDto<List<ProductOutputDTO>>.Success(result, " done");
@@ -70,7 +71,7 @@ namespace OnlineShoping.Application.ServicesImplementation
 
         public async Task<ResponseResultDto<ProductOutputDTO>> GetById(BaseRequestDto<int> Id)
         {
-            var product = await _productRepository.Get(x => x.Id == Id.Data).FirstOrDefaultAsync();
+            var product = await _productRepository.Get(Id.Data);
             if (product is null)
                 return ResponseResultDto<ProductOutputDTO>.NotFound(null, "not found");
 
@@ -84,7 +85,7 @@ namespace OnlineShoping.Application.ServicesImplementation
             if (productInputDTO.Data.ProductImage is null && productInputDTO.Data.Id == default(int))
                 return ResponseResultDto<bool>.InvalidData(result: false, message: _messageResourceReader.GetValidationMessage(ValidationMessageKey.ProductImageValidation));
 
-            if (productInputDTO.Data.ProductImage is not null)
+            if (productInputDTO.Data.ProductImage is not null )
             {
                 string perfix = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "-";
                 bool uploadResult = await GeneralUtilities.Upload(productInputDTO.Data.ProductImage, UploadFilesConfigurations.ImageFolderUrl, perfix);
